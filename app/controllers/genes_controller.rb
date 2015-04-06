@@ -2,12 +2,11 @@ class GenesController < ApplicationController
   actions_without_auth :index, :show, :mygene_info_proxy, :datatable
 
   def index
-    genes = Gene.view_scope
-      .page(params[:page].to_i)
+    @page = 
+    @genes = Gene.page(params[:page].to_i)
       .per(params[:count].to_i)
       .map { |g| GenePresenter.new(g) }
 
-    render json: genes
   end
 
   def create
@@ -22,8 +21,7 @@ class GenesController < ApplicationController
   end
 
   def show
-    gene = Gene.view_scope.find_by!(entrez_id: params[:id])
-    render json: GenePresenter.new(gene, true)
+    @gene = Gene.find_by!(entrez_id: params[:id])
   end
 
   def update
