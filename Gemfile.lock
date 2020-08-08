@@ -170,7 +170,8 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kramdown (1.12.0)
+    kramdown (2.3.0)
+      rexml
     launchy (2.4.3)
       addressable (~> 2.3)
     libv8 (3.16.14.15)
@@ -288,6 +289,7 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rexml (3.2.4)
     rinku (2.0.0)
     rspec-core (3.5.3)
       rspec-support (~> 3.5.0)
